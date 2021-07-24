@@ -1,0 +1,12 @@
+.bg-img-digitalMarketing {
+  background-image: url(./../img/it-services.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 400px;
+}
+.bg-img-itServices {
+  background-image: url(./../img/it-services.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 400px;
+}

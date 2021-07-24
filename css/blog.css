@@ -1,0 +1,26 @@
+#img{
+    width: 100vw;
+    height: 95vh;
+}
+.blog-card{
+    margin-top: 5vh;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 5vh;
+}
+.blog-header{
+    background-color: orangered;
+    color: white;
+    text-align: center;
+}
+strong{
+    color:rgb(255, 117, 117);
+}
+/* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+    #img{
+        width: 100vw;
+        height: 45vh;
+    }
+    
+  }

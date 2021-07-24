@@ -1,0 +1,25 @@
+.p::first-letter{
+    font-size: 2rem;
+    color: rgb(115, 115, 206);
+    
+}
+
+.domain{
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 0 0 3px #ff650c;
+    
+}
+.mycard{
+    width: 30vw;
+    height: 28vh;
+    background-color: black;
+    color: white;
+}
+strong{
+    color: orangered;
+    text-transform: uppercase;
+}
+h4{
+    color: orangered;
+    margin-left: 1vw;
+}

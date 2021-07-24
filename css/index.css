@@ -1,0 +1,409 @@
+:root {
+  --header: rgb(255, 117, 117);
+  --border: rgba(255, 117, 117, 0.349);
+  --button: rgb(255, 117, 117);
+  --outline: rgb(255, 78, 78);
+  --icon: rgb(255, 78, 78);
+  --text-color-primary: rgb(255, 117, 117);
+  --background-color-primary: rgb(2, 2, 37);
+  --footer-link: white;
+  --logo-color: #ec4c36;
+}
+.font-univ {
+  font-weight: bolder;
+  font-family: cursive;
+}
+.btn-container {
+  width: 100%;
+  margin: 1vw;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.sub-container {
+  background-color: rgba(0, 0, 42, 0.603);
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3vw;
+}
+.bg-img-res {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.nav-color {
+  background-color: var(--background-color-primary);
+}
+.gradient-right {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 42, 0.603),
+    var(--header)
+  );
+  color: white;
+}
+.gradient-left {
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 42, 0.603),
+    var(--header)
+  );
+  color: white;
+}
+.gradient-blue-white {
+  background-image: linear-gradient(to left, rgba(0, 0, 42, 0.603), white);
+  color: white;
+}
+.gradient-white-blue {
+  background-image: linear-gradient(to left, white, rgba(0, 0, 42, 0.603));
+}
+
+.bg-img-full-gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 42, 0.603),
+    var(--header)
+  );
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.half-item {
+  font-weight: 800;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  height: 200px;
+  padding: 5vw;
+  text-align: center;
+}
+.full-item {
+  font-weight: 800;
+  color: var(--text-color-primary);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  height: auto;
+  padding: 30px;
+  text-align: center;
+}
+.item-header {
+  font-weight: 800;
+  color: var(--text-color-primary);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  padding: 3vw;
+  text-align: center;
+}
+.para-small{
+  font-weight: 600;
+  color: White;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  
+}
+.item-small {
+  font-weight: 600;
+  color: White;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 1vw;
+}
+.overlay-blue {
+  background-color: rgba(0, 0, 42, 0.603);
+  width: 100%;
+  height: 100%;
+}
+
+
+.footer-link{
+  color:white;
+  
+}
+.footer-link:hover{
+  color :var(--header);
+}
+.dark-footer {
+  color: var(--text-color-primary);
+  background-color: var(--background-color-primary);
+}
+.list-unstyled > a {
+  color: white;
+}
+.padding-no {
+  padding: 0;
+}
+.bullet-image {
+  height: 16px;
+  width: 16px;
+  object-fit: cover;
+}
+.bullet-style-image {
+  list-style-image: url(/img/bullet.png);
+}
+.padding-vw1 {
+  padding: 1vw;
+}
+.padding-vw5 {
+  padding-top: 5vw;
+  padding-left: 5vw;
+}
+.bg-color-silver {
+  background-color: #e9ecef;
+}
+.button-background-color {
+  background-color: springgreen;
+}
+.font-courier {
+  font-family: 'Courier New', monospace;
+}
+.about-header {
+  font-weight: 45px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.font-size12 {
+  font-size: 12px;
+}
+.margin-top4 {
+  margin-top: 4vw;
+}
+.font-color-orange {
+  color: var(--text-color-primary);
+}
+.font-color-white {
+  color: #e9ecef;
+}
+.bg-color-orange {
+  background-color: #eb4b2b;
+  color: white;
+  font-weight: bold;
+}
+
+.background-poster {
+  background-image: url('/img/frame-background.jpg');
+}
+.logo-div-size {
+  height: 250px;
+  width: 250px;
+  padding: 1vw;
+}
+.padding-vw3 {
+  padding: 3vw;
+}
+.padding-bottom-2vw {
+  padding-bottom: 3vw;
+}
+.navbar-padding {
+  padding: 0px;
+}
+.nav-line{
+  border-top: 4px solid var(--icon)
+}
+.shadow-hover:hover {
+  border-radius: 4px;
+  border: 0 0 0 1px rgb(0 0 0 / 20%);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav-item:active {
+  outline: 2px solid #ec4c36;
+}
+.padding-left-5vw {
+  padding-left: 5vw;
+}
+
+.footer-sticky {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.footer-shadow {
+  box-shadow: 0 -10px 5px rgba(0, 0, 0, 0.15);
+}
+.padding-top-5vw {
+  padding-top: 5vw;
+}
+.our-services-header {
+  color: #ec4c36;
+  padding: 3vw;
+}
+.margin-card-top-10 {
+  margin-top: 100px;
+}
+.form-background-color {
+  /* background-image:url(/img/form-background.jpg); */
+  background-color: #e9ecef;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+.form-background-image {
+  background-image: url(/img/D-jurny.png);
+  background-color: #e9ecef;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+.img-size {
+  height: 40vw;
+  width: 40vw;
+  max-height: 400px;
+  max-width: 400px;
+}
+.img-height {
+  height: 40vw;
+
+  max-height: 400px;
+}
+.logo {
+  max-height: 90px;
+  width: 100%;
+  object-fit: contain;
+}
+.padding-3vw {
+  padding: 3vw;
+}
+.font-size {
+  font-size: 20px;
+}
+.icon-size {
+  font-size: 30px;
+  padding: 5px;
+}
+.font-size-12 {
+  font-size: 12px;
+  text-align: center;
+}
+.border-shadow {
+  border-top: 2px solid rgba(128, 128, 128, 0.466);
+}
+.button-color,
+.btn-success:active,
+.btn-success:visited {
+  background-color: #ec4c36;
+  border-color: #ec4b3698;
+}
+.button-color:hover {
+  background-color: #eb2d14ce;
+}
+.align-center {
+  text-align: center;
+  vertical-align: center;
+}
+.padding-top-5vw {
+  padding-top: 5vw;
+}
+
+/* this content goes to some external file */
+
+.border-top-shadow {
+  border-top: 2px solid rgba(143, 143, 143, 0.13);
+}
+.card-image-width {
+  height: 350px;
+}
+
+/* above-nevbar */
+.button {
+  background: #f93010;
+  border: 1px solid rgb(235 78 45);
+  color: white;
+  border-radius: 3px;
+}
+.button:hover {
+  background-color: white;
+  border-color: rgb(235 78 45);
+  color: #f93010;
+}
+/* .submit-button{
+  box-shadow: 0 8px 16px 0 rgba(255, 81, 0, 0.404), 0 6px 20px 0 rgba(250, 78, 10, 0.918);
+}
+
+
+
+.submit-button:hover{
+  box-shadow: 0 12px 16px 0 rgba(255, 81, 0, 0.404), 0 17px 50px 0 rgba(0,0,0,0.19);
+} */
+.navbar {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 10px;
+}
+.navbar-brand {
+  height: 68px;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+}
+
+.text-style {
+  font-weight: normal;
+  vertical-align: middle;
+  color: #007bff;
+}
+
+.text-style:hover {
+  text-decoration: none;
+}
+
+/* css for Industary Button */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+.list-group-item {
+  background-color: var(--background-color-primary);
+  color: white;
+  margin: 2px;
+}
+.list-group-item a {
+  color: white;
+}
+.SyoloBusiness-Process-header {
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+}
+.SyoloBusiness-Process {
+  height: 65vh;
+}
+.img {
+  width: 45vw;
+}
+#img2 {
+  width: 50vw;
+  height: 55vh;
+}
+
+
+#includeFooter {
+  color: white;
+  z-index: 10;
+  background: #fff;
+}
+
+/* above nevbar z-index code of to show dropdown list  */
+.btn:hover {
+  z-index: 1234;
+}
+.full-size {
+  height: 580px;
+  width: 100%;
+}
+.shadow-top {
+  box-shadow: 0 -10px 5px rgba(0, 0, 0, 0.15);
+}
+.jumbotron {
+  background-color: transparent;
+}

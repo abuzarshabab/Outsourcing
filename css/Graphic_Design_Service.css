@@ -1,0 +1,10 @@
+h3{
+    color: white;
+    text-transform: uppercase;
+}
+strong{
+    color: orangered;
+}
+strong h4{
+    text-transform: uppercase;
+}

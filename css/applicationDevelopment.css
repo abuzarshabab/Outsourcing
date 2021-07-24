@@ -1,0 +1,11 @@
+.mycard{
+    background-color: black;
+    color: white;
+}
+#img1{
+    width:100%; height: 410px
+}
+.app_card{
+    width: 40vw;
+    margin-left: 3vw;
+}

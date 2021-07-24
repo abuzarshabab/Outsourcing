@@ -1,0 +1,21 @@
+.img-fluid{
+    width: 98vw;
+    margin-left: 7px;
+    height: 95vh;
+}
+.Disclaimer-card{
+    margin-top: 5vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 5vh;
+}
+strong{
+    color: rgb(235 78 45);
+}
+/* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+    .img-fluid{
+        width: 98vw;
+        margin-left: 7px;
+        height: 45vh;
+    }
+  }

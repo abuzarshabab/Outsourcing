@@ -1,0 +1,127 @@
+*{ 
+    margin:0vw;
+    padding: 0vw;
+    box-sizing: border-box;
+
+}
+html,body{
+    height: 100%;
+}
+
+#home-section{
+    position: relative;
+    background: url(../img/industry-helth.jpg) no-repeat;
+    min-height:400px;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+.dark-overlay{
+    background-color: rgba( 0, 0, 0, 0.6);
+   
+    width: 100%;
+    min-height: 400px;
+}
+.industry-text{
+    color: blanchedalmond;
+    text-align: center;
+}
+
+/* Industry-Event Management */
+#Industry-Event-section{
+    position: relative;
+    background: url(../img/industry-event-manage.jpg) no-repeat;
+    min-height:400px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#Industry-hospitality-section{
+    position: relative;
+    background: url(../img/industry-hospitality.jpg) no-repeat;
+    min-height:400px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#Industry-education-section{
+    position: relative;
+    background: url(../img/industry-educaton.jpg) no-repeat;
+    min-height:400px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#Industry-s-m-business-section{
+    position: relative;
+    background: url(../img/Industry-small-business.jpg) no-repeat;
+    min-height:400px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#Industry-human-resource{
+    position: relative;
+    background: url(../img/Industry-humain-resource.jpg) no-repeat;
+    min-height:400px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#Industry-real-estate
+{
+    position: relative;
+    background: url(../img/Industry-real-state.jpg) no-repeat;
+    min-height:400px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#Industry-retail{
+    position: relative;
+    background: url(../img/Industry-retail.jpg) no-repeat;
+    min-height:400px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#PrivacyPolicy-section{
+    position: relative;
+    background: url(../img/privacy.jpg) no-repeat;
+    min-height:400px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* .button{
+    background: #f93010;
+    border: 1px solid rgb(235 78 45);;
+   color: white;
+   border-radius: 3px;
+   }
+.button:hover{
+     background-color:white;
+     border-color:rgb(235 78 45);
+     color: #f93010;;
+   } */
+
+/* .container{
+
+    margin-top: 7vw ;
+    margin-bottom: 2vw;
+     
+}
+
+.card:hover{ */
+    
+    /* shadow */
+    /* border-radius: 10px;
+  border: 0 0 0 1px rgb(0 0 0 / 20%);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card-body
+{
+    padding: 0vw;
+    margin: 0vw;
+}
+
+h3{
+    margin-top: 0.50vw;
+    font-size: 1.5vw;
+} */
+

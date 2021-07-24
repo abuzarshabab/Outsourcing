@@ -1,0 +1,161 @@
+body{
+    background-color: #333;
+    
+}
+:root {
+  --header: rgb(255, 117, 117);
+  --border: rgba(255, 117, 117, 0.349);
+  --button: rgb(255, 117, 117);
+  --outline: rgb(255, 78, 78);
+  --icon: rgb(255, 78, 78);
+  --text-color-primary: rgb(255, 117, 117);
+  --background-color-primary: rgb(2, 2, 37);
+  --footer-link: white;
+  --logo-color: #ec4c36;
+}
+
+#Cost-Effective-Section{   
+    position: relative;
+    background: url(../img/outsourcing.design___architecture_consulting3.jpg) no-repeat; 
+    background-size: cover;
+    min-height: 100%;
+    background-attachment: fixed;
+    
+}
+#BAS{   
+  position: relative;
+  background: url(../img/analyzing.gif) no-repeat; 
+  background-size: cover;
+  min-height: 100%;
+  background-attachment: fixed;
+  
+}
+
+#IOT{   
+  position: relative;
+  background: url(../img/internet-of-things.jpg) no-repeat; 
+  background-size: cover;
+  min-height: 100%;
+  background-attachment: fixed;
+  
+}
+#Mobile-based-Section{
+  position: relative;
+    background: url(../img/industry-hospitality.jpg) no-repeat; 
+    background-size: cover;
+    min-height: 100%;
+    background-attachment: fixed;
+}
+#mobile-based{
+  background: url(../image/) no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  background-attachment: fixed;
+}
+#business-analytics{
+  background: url(../img/Industry-small-business.jpg) no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  background-attachment: fixed;
+}
+#javaScript-solution-Section{
+  background: url(../img/Technology-javascript.jpg) no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  background-attachment: fixed;
+}
+
+#Cloud-base-Section{
+  position: relative;
+    background: url(../img/Technology.cloud.jpg) no-repeat; 
+    background-size: cover;
+    min-height: 100%;
+    background-attachment: fixed;
+}
+
+.dark-overlay{
+    color: rgba(0, 0, 0,0.8);
+    width: 100%;
+    min-height: 100%;
+}
+
+.icon-style{
+    color: #008ed6;
+    background: #fff;
+    padding: 2px;
+    border-radius: 5px;
+}
+.Pading{
+    padding:0.5rem;
+}
+.text-style{
+    font-weight:500;
+    color:var(--header)
+}
+/* .card-cost-effective{
+
+} */
+
+.card-cost-effective{
+    position: relative;
+  
+  }
+  
+  .image {
+    display: block;
+   
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.8;
+    background-color:black;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  }
+  
+  .card-cost-effective:hover .overlay {
+    height: 100%;
+    
+  }
+  
+  .text {
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+  }
+  .technology-card-text
+
+  {
+    padding:1rem;
+    background-color: transparent;
+    color:white;
+    
+    
+  }
+ul{
+  list-style: none;
+
+}
+.list-style >li::before{
+  content: "\2022";
+  font-size: 2em;
+  color: var(--icon);
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+  
+}

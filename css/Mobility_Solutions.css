@@ -1,0 +1,32 @@
+.border{
+    width: 38vw;
+height: 50vh;
+margin: 10px;
+padding: 20px;
+background: black;
+color: white;
+border-radius: 10px;
+
+}
+.list1{
+    list-style-type: disclosure-closed;
+}
+.list1 li{
+    padding: 1px;
+}
+.list1 li ::marker{
+    color: orangered;
+}
+.list2{
+    list-style-type: disclosure-closed;
+}
+.list2 li{
+    padding: 5px;
+}
+.list2 li ::marker{
+    color: orangered;
+}
+strong{
+    color: orangered;
+    text-transform: uppercase;
+}

@@ -1,0 +1,53 @@
+.img-fluid{
+    width: 98vw;
+    height: 95vh;
+    margin-left: 6px;
+}
+.centered {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    border-radius: 24px;
+    background-color: rgb(235 78 45);
+    padding: 10px;
+    text-transform: uppercase;
+  }
+ 
+  #p1{
+      font-weight: bold;
+  }
+  .Cancellation-card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+margin-top: 5vh;
+padding: 5px;
+margin-bottom: 5vh;
+}
+.Cancellation-header{
+    background-color: rgb(235 78 45);
+    color: white;
+}
+strong{
+    color: rgb(235 78 45);
+}
+/* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+    .img-fluid{
+        width: 98vw;
+        height: 45vh;
+        margin-left: 6px;
+    }
+    .centered {
+        position: absolute;
+        top: 37%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        border-radius: 24px;
+        background-color: rgb(235 78 45);
+        padding: 10px;
+        text-transform: uppercase;
+        width: 95vw;
+    }
+  }

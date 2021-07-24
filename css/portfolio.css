@@ -1,0 +1,14 @@
+  /* Bottom right text */
+  .text-block {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: -13px;
+    color: white;
+    display: block;
+    font-weight: 300;
+    left: 2rem;
+    padding: 4px;
+    position: absolute;
+    right: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+  }

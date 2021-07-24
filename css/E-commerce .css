@@ -1,0 +1,28 @@
+.mycard{
+    background-color: black;
+    color: white;
+    width: 30vw;
+    height: 30vh;
+}
+strong{
+    color: orangered;
+    text-transform: uppercase;
+}
+.list-2{
+    list-style-type:decimal;
+}
+.list-2 li::marker{
+    color: orangered;
+}
+.list-meta{
+margin-left: 23vw;
+}
+.list-3{
+    list-style-type:disclosure-closed;;
+}
+.list-3 li{
+    padding: 5px;
+}
+.list-3 li::marker{
+    color: orangered;
+}

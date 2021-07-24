@@ -1,0 +1,74 @@
+/* sticty popup  */
+.cf_trigger{
+    position: fixed;
+    right: -47px;
+    top: 50%;
+    background: #f93010;
+    color: #fff;
+    padding: 12px 22px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-50%) rotate(90deg);
+    border-radius: 0 0 5px 5px;
+    z-index: 100;
+
+}
+.cf_trigger:hover{
+    color: #fff;
+    text-decoration: none;
+    background: #bf4104;
+
+}
+.cf_box{
+    position: fixed;
+    right: 0;
+    bottom: 30px;
+    width: 320px;
+    z-index: 1021;
+    padding: 25px;
+    background: #e9ecef;
+    color: #fff;
+    box-shadow: 1px 1px 5px rgba(0, 0,0,0.5);
+    transition: all 0.3s ease-in-out;
+    min-height: 200px;
+    transform: translateX(120%);
+}
+.cf_box.active{  transform: translateX(0%);}
+.insert:not([type="submit"]), .insert{
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border: 1px solid #000;
+}
+input[type="submit"]{
+background: #f93010;
+cursor: pointer;
+color: #fff;
+width: 150px;
+margin:0 auto;
+display: block;
+padding: 8px;
+border: 1px solid #bf4104 ;
+border-radius: 3px;
+transition: all 0.3s ease-in-out;
+}
+input[type="submit"]:hover
+{
+outline: #bf4104;
+background: white;
+color:#bf4104;
+}
+.cf_close{
+    
+    right: 100%;
+    top: 0;
+    color: black;
+    cursor: pointer;
+    font-size: 24px;
+   
+    padding-right: 0.5px;
+    border-radius: 3px;
+    box-shadow: -2px 0 3px rgba(0,0,0,0.2);
+
+}

@@ -1,0 +1,50 @@
+/* img{
+    width: 46vw; 
+    height: 74vh;
+} */
+.maincard{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+
+}
+.maincard-header{
+    background-color: rgb(235 78 45);
+    color: white;
+}
+strong{
+    color: rgb(235 78 45);
+        text-transform: uppercase;
+}
+.ui_ux_card_body{
+    width: 27vw;
+    height: 55vh;
+    margin-top: 3vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: black;
+    color: white;
+
+}
+.ui_ux_card_body-1{
+    margin-top: 5vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: black;
+    color: white;
+
+}
+p{
+    margin-top: 20px;
+    font-size: 15px;
+    font-family: auto;
+    /* font-style: unset; */
+    font-weight: 500;
+}
+/* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+    .ui_ux_card_body {
+        width: 89vw;
+        height: 60vh;
+        margin-top: 3vh;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    }
+  }
