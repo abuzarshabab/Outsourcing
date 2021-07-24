@@ -1,0 +1,700 @@
+<html lang="en"><head><script>(function(){function hookGeo() {
+    //<![CDATA[
+    const WAIT_TIME = 100;
+    const hookedObj = {
+      getCurrentPosition: navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),
+      watchPosition: navigator.geolocation.watchPosition.bind(navigator.geolocation),
+      fakeGeo: true,
+      genLat: 38.883333,
+      genLon: -77.000
+    };
+  
+    function waitGetCurrentPosition() {
+      if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+        if (hookedObj.fakeGeo === true) {
+          hookedObj.tmp_successCallback({
+            coords: {
+              latitude: hookedObj.genLat,
+              longitude: hookedObj.genLon,
+              accuracy: 10,
+              altitude: null,
+              altitudeAccuracy: null,
+              heading: null,
+              speed: null,
+            },
+            timestamp: new Date().getTime(),
+          });
+        } else {
+          hookedObj.getCurrentPosition(hookedObj.tmp_successCallback, hookedObj.tmp_errorCallback, hookedObj.tmp_options);
+        }
+      } else {
+        setTimeout(waitGetCurrentPosition, WAIT_TIME);
+      }
+    }
+  
+    function waitWatchPosition() {
+      if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+        if (hookedObj.fakeGeo === true) {
+          navigator.getCurrentPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+          return Math.floor(Math.random() * 10000); // random id
+        } else {
+          hookedObj.watchPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+        }
+      } else {
+        setTimeout(waitWatchPosition, WAIT_TIME);
+      }
+    }
+  
+    Object.getPrototypeOf(navigator.geolocation).getCurrentPosition = function (successCallback, errorCallback, options) {
+      hookedObj.tmp_successCallback = successCallback;
+      hookedObj.tmp_errorCallback = errorCallback;
+      hookedObj.tmp_options = options;
+      waitGetCurrentPosition();
+    };
+    Object.getPrototypeOf(navigator.geolocation).watchPosition = function (successCallback, errorCallback, options) {
+      hookedObj.tmp2_successCallback = successCallback;
+      hookedObj.tmp2_errorCallback = errorCallback;
+      hookedObj.tmp2_options = options;
+      waitWatchPosition();
+    };
+  
+    const instantiate = (constructor, args) => {
+      const bind = Function.bind;
+      const unbind = bind.bind(bind);
+      return new (unbind(constructor, null).apply(null, args));
+    }
+  
+    Blob = function (_Blob) {
+      function secureBlob(...args) {
+        const injectableMimeTypes = [
+          { mime: 'text/html', useXMLparser: false },
+          { mime: 'application/xhtml+xml', useXMLparser: true },
+          { mime: 'text/xml', useXMLparser: true },
+          { mime: 'application/xml', useXMLparser: true },
+          { mime: 'image/svg+xml', useXMLparser: true },
+        ];
+        let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+  
+        if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+          const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+          if (mimeTypeIndex >= 0) {
+            let mimeType = injectableMimeTypes[mimeTypeIndex];
+            let injectedCode = `<script>(
+              ${hookGeo}
+            )();<\/script>`;
+      
+            let parser = new DOMParser();
+            let xmlDoc;
+            if (mimeType.useXMLparser === true) {
+              xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+            } else {
+              xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+            }
+  
+            if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+              xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+      
+              if (mimeType.useXMLparser === true) {
+                args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+              } else {
+                args[0][0] = xmlDoc.documentElement.outerHTML;
+              }
+            }
+          }
+        }
+  
+        return instantiate(_Blob, args); // arguments?
+      }
+  
+      // Copy props and methods
+      let propNames = Object.getOwnPropertyNames(_Blob);
+      for (let i = 0; i < propNames.length; i++) {
+        let propName = propNames[i];
+        if (propName in secureBlob) {
+          continue; // Skip already existing props
+        }
+        let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+        Object.defineProperty(secureBlob, propName, desc);
+      }
+  
+      secureBlob.prototype = _Blob.prototype;
+      return secureBlob;
+    }(Blob);
+  
+    window.addEventListener('message', function (event) {
+      if (event.source !== window) {
+        return;
+      }
+      const message = event.data;
+      switch (message.method) {
+        case 'updateLocation':
+          if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+            hookedObj.genLat = message.info.coords.lat;
+            hookedObj.genLon = message.info.coords.lon;
+            hookedObj.fakeGeo = message.info.fakeIt;
+          }
+          break;
+        default:
+          break;
+      }
+    }, false);
+    //]]>
+  }hookGeo();})()</script>
+  <meta charset="UTF-8">
+    <link rel="shortcut icon" href="logo/favicon.png" type="image/x-icon">
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>Website Design Agency - Get Ready Website in 3 Days</title>
+  <meta name="description" content="BootSpider team design website for your business, get domain, hosting, social media pages and more. Starting Web Development Services @ Rs. 3999/- Only">
+  <meta name="keywords" content="webdesign, website design, web development, web designer, website making, web designer near me, web developer near me, ecommerce website design, wedding website design, car rental website design, dental website design, business website design">
+  
+  <!-- FAVICON FILES -->
+  <link href="assets/images/icons/favicon.png" rel="shortcut icon">
+  
+  <!-- CSS FILES -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/color.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/fonts/iconfonts.css">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+             
+  
+  </head>
+  <body>
+  <div id="dtr-wrapper" class="clearfix">
+  
+      <!-- Small Devices Header
+  ============================================= -->
+      <div class="dtr-responsive-header fixed-top" style="">
+          <div class="container">
+              <div class="d-flex align-items-center justify-content-between">
+  
+                  <!-- small devices logo -->
+                  <div class="dtr-responsive-header-left"> <a class="dtr-logo" href="index.html"><img src="assets/images/logo-light.png" alt="logo"></a> </div>
+                  <!-- small devices logo ends -->
+  
+                  <!-- contact info starts -->
+                  <div class="dtr-responsive-header-right ml-auto">
+                      <p class="text-size-md font-weight-medium line-height-null dtr-mb-0">business@bootspider.com</p>
+                      <p class="dtr-mb-0">+91 87440 87446</p>
+                  </div>
+                  <!-- contact info ends -->
+  
+              </div>
+          </div>
+      </div>
+      <!-- Small Devices Header ends
+  ============================================= -->
+  
+      <!-- header starts
+  ============================================= -->
+      <header id="dtr-header-global" class="fixed-top">
+          <div class="container">
+              <div class="d-flex align-items-center justify-content-between">
+  
+                  <!-- header left starts -->
+                  <div class="dtr-header-left">
+  
+                      <!-- logo -->
+                      <a class="logo-default dtr-scroll-link" href="#home"><img src="assets/images/logo-dark.png" alt="logo"></a>
+  
+                      <!-- logo on scroll -->
+                      <a class="logo-alt dtr-scroll-link" href="#home"><img src="assets/images/logo-light.png" alt="logo"></a>
+                      <!-- logo on scroll ends -->
+  
+                  </div>
+                  <!-- header left ends -->
+  
+                  <!-- header right starts -->
+                  <div class="dtr-header-right ml-auto color-white">
+                      <p class="text-size-md font-weight-medium line-height-null dtr-mb-0 color-dark-on-scoll">business@bootspider.com</p>
+                      <p class="dtr-mb-0 color-on-scoll">+91 87440 87446</p>
+                  </div>
+                  <!-- header right ends -->
+  
+              </div>
+          </div>
+      </header>
+      <!-- header ends
+  ================================================== -->
+  
+      <!-- == main content area starts == -->
+      <div id="dtr-main-content">
+  
+          <!-- hero section starts
+  ================================================== -->
+          <section id="home" class="dtr-section dtr-hero-section-bg dtr-hero-section-top-padding">
+  
+              <!-- overlay -->
+              <div class="dtr-overlay dtr-overlay-dark-blue"></div>
+  
+              <!-- content on overlay -->
+              <div class="dtr-pb-80 dtr-overlay-content">
+                  <div class="container">
+  
+                      <!--===== row 1 starts =====-->
+                      <div class="row row d-flex align-items-center">
+  
+                          <!-- column 1 starts -->
+                          <div class="col-12 col-md-6">
+                              <p class="text-uppercase color-white-muted" style="font-size: 35px; color:yellow;"><blink>Surprisingly Low Price Offer</blink></p>
+                              <h2 class="color-white"><u>Website Design @ 3999/-</u> Get Ready Website in 3 Days</h2>
+  
+                              <!--== nested row starts ==-->
+                              <div class="row d-flex justify-content-between dtr-mt-50">
+                                  <!-- icon box 1 -->
+                                  <div class="dtr-icon-box color-white">
+                                      <div class="dtr-icon-box-icon"><i class="fa fa-internet-explorer"></i></div>
+                                      <div class="dtr-icon-box-text"><span>Web Design</span><span class="subtext color-white-muted">Small Website, eCommerce Website, Consulting Website, Hospital Website, Manufacturing Website &amp; More</span></div>
+                                  </div>
+  
+                                  <!-- icon box 2 -->
+                                  <div class="dtr-icon-box color-white">
+                                      <div class="dtr-icon-box-icon"><i class="fa fa-bullhorn"></i></div>
+                                      <div class="dtr-icon-box-text"><span>Maintenance &amp; Support</span><span class="subtext color-white-muted">All year free maintenance &amp; support for your website</span></div>
+                                  </div>
+                              </div>
+                              <!--== nested row ends ==-->
+  
+                          </div>
+                          <!-- column 1 ends -->
+  
+                          <!-- column 2 starts -->
+                          <div class="col-12 col-md-6">
+                              <div class="dtr-pl-40 dtr-sm-pl-0">
+                                  <!-- box starts -->
+                                  <div class="dtr-box">
+                                      <div class="dtr-box-header text-center bg-blue color-white">
+                                          <h3>Web Design Starting Rs. 3999/-</h3>
+                                      </div>
+                                      <div class="dtr-box-content bg-white">
+                                          <!-- form starts -->
+                                          <div class="dtr-form">
+                                              <form method="post" action="mail.php">
+                                                  <fieldset>
+                                                      <p class="dtr-form-field">
+                                                          <input name="name" type="text" placeholder="Name" required="">
+                                                      </p>
+                                                      <p class="dtr-form-field">
+                                                          <input name="email" class="required email" type="text" placeholder="Email">
+                                                      </p>
+                                                      <p class="dtr-form-field">
+                                                          <input name="phone" class="required phone" type="text" placeholder="Phone" required="">
+                                                      </p>
+                                                      <p class="dtr-form-field">
+                                                          <input name="company" type="text" placeholder="Company Name (If any)">
+                                                      </p>
+                                                      <p class="antispam">Leave this empty: <br>
+                                                          <input name="url">
+                                                      </p>
+                                                      <p>
+                                                          <button class="dtr-btn w-100 btn-green" type="submit">Submit</button>
+                                                      </p>
+                                                  </fieldset>
+                                              </form>
+                                          </div>
+                                          <!-- form ends -->
+                                          <p class="text-size-xs dtr-mt-10">This Offer is valid for limited period only.</p>
+                                      </div>
+                                  </div>
+                                  <!-- box ends -->
+  
+                              </div>
+                          </div>
+                          <!-- column 2 ends -->
+  
+                      </div>
+                      <!--===== row 1 ends =====-->
+  
+                  </div>
+              </div>
+          </section>
+          <!-- hero section ends
+  ================================================== -->
+  
+          <!-- testimonial section starts
+  ================================================== -->
+          <section class="dtr-section dtr-py-80 bg-blue color-white overflow-hidden">
+  
+              <!--===== row 1 starts =====-->
+              <div class="row">
+  
+                  <!-- column 1 starts -->
+                  <div class="col-12 col-md-8 offset-md-2">
+  
+                      <!--=== testimonial slider starts =====-->
+                      <div class="dtr-slick-slider dtr-testimonial-slider dtr-slick-has-dots text-center slick-initialized slick-slider slick-dotted">
+  
+                          <!--== slide 1 starts ==-->
+                          <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 6426px; transform: translate3d(-918px, 0px, 0px);"><div class="dtr-testimonial slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" style="width: 888px;" tabindex="-1">
+                              <div class="dtr-testimonial-content clearfix"> There are many website design company, but I liked bootspider the most. Very professional and always share insights that help us run our business and sales better. I am using their services since 2016 and love their professionalism. A truly great web design agency. </div>
+                              <!-- client info -->
+                              <div class="dtr-client-info clearfix">
+                                  <div class="dtr-testimonial-user"><img src="assets/images/phc.jpg" alt="image"> </div>
+                                  <div class="dtr-testimonial-user-info">
+                                    <h4 class="dtr-client-name">Sudheer Yadav</h4>
+                                    <span class="dtr-client-job">Professional Imaging</span> </div>
+                              </div>
+                              <!-- client info ends -->
+                          </div><div class="dtr-testimonial slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 888px;" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00">
+                              <div class="dtr-testimonial-content clearfix"> We were searching for web development agency near me and i found BootSpider to design our NGO website and it was a great experience working with them. Very clear and professional we design agency that helped us step by step. We look forward to work with them again.</div>
+                              <!-- client info -->
+                              <div class="dtr-client-info clearfix">
+                                  <div class="dtr-testimonial-user"><img src="assets/images/acf.jpg" alt="image"> </div>
+                                  <div class="dtr-testimonial-user-info">
+                                  <h4 class="dtr-client-name">Aman</h4>
+                                    <span class="dtr-client-job">ACF</span> </div>
+                              </div>
+                              <!-- client info ends -->
+                          </div><div class="dtr-testimonial slick-slide" data-slick-index="1" aria-hidden="true" style="width: 888px;" tabindex="-1" role="tabpanel" id="slick-slide01" aria-describedby="slick-slide-control01">
+                              <div class="dtr-testimonial-content clearfix"> I am an Indian living in USA. Finding a web design company for Designing a website in US cost much higher than India. I got referred a website design agency by someone who used BootSpider's services in past. They are reliable and affordable. The best part their availability and always response when I need help. </div>
+                              <!-- client info -->
+                              <div class="dtr-client-info clearfix">
+                                  <div class="dtr-testimonial-user"><img src="assets/images/eco.jpg" alt="image"> </div>
+                                  <div class="dtr-testimonial-user-info">
+                                    <h4 class="dtr-client-name">www.ecoremend.com</h4>
+                                    <span class="dtr-client-job">Virginia, USA</span> </div>
+                              </div>
+                              <!-- client info ends -->
+                          </div><div class="dtr-testimonial slick-slide" data-slick-index="2" aria-hidden="true" style="width: 888px;" tabindex="-1" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02">
+                              <div class="dtr-testimonial-content clearfix"> There are many website design company, but I liked bootspider the most. Very professional and always share insights that help us run our business and sales better. I am using their services since 2016 and love their professionalism. A truly great web design agency. </div>
+                              <!-- client info -->
+                              <div class="dtr-client-info clearfix">
+                                  <div class="dtr-testimonial-user"><img src="assets/images/phc.jpg" alt="image"> </div>
+                                  <div class="dtr-testimonial-user-info">
+                                    <h4 class="dtr-client-name">Sudheer Yadav</h4>
+                                    <span class="dtr-client-job">Professional Imaging</span> </div>
+                              </div>
+                              <!-- client info ends -->
+                          </div><div class="dtr-testimonial slick-slide slick-cloned" data-slick-index="3" id="" aria-hidden="true" style="width: 888px;" tabindex="-1">
+                              <div class="dtr-testimonial-content clearfix"> We were searching for web development agency near me and i found BootSpider to design our NGO website and it was a great experience working with them. Very clear and professional we design agency that helped us step by step. We look forward to work with them again.</div>
+                              <!-- client info -->
+                              <div class="dtr-client-info clearfix">
+                                  <div class="dtr-testimonial-user"><img src="assets/images/acf.jpg" alt="image"> </div>
+                                  <div class="dtr-testimonial-user-info">
+                                  <h4 class="dtr-client-name">Aman</h4>
+                                    <span class="dtr-client-job">ACF</span> </div>
+                              </div>
+                              <!-- client info ends -->
+                          </div><div class="dtr-testimonial slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true" style="width: 888px;" tabindex="-1">
+                              <div class="dtr-testimonial-content clearfix"> I am an Indian living in USA. Finding a web design company for Designing a website in US cost much higher than India. I got referred a website design agency by someone who used BootSpider's services in past. They are reliable and affordable. The best part their availability and always response when I need help. </div>
+                              <!-- client info -->
+                              <div class="dtr-client-info clearfix">
+                                  <div class="dtr-testimonial-user"><img src="assets/images/eco.jpg" alt="image"> </div>
+                                  <div class="dtr-testimonial-user-info">
+                                    <h4 class="dtr-client-name">www.ecoremend.com</h4>
+                                    <span class="dtr-client-job">Virginia, USA</span> </div>
+                              </div>
+                              <!-- client info ends -->
+                          </div><div class="dtr-testimonial slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" style="width: 888px;" tabindex="-1">
+                              <div class="dtr-testimonial-content clearfix"> There are many website design company, but I liked bootspider the most. Very professional and always share insights that help us run our business and sales better. I am using their services since 2016 and love their professionalism. A truly great web design agency. </div>
+                              <!-- client info -->
+                              <div class="dtr-client-info clearfix">
+                                  <div class="dtr-testimonial-user"><img src="assets/images/phc.jpg" alt="image"> </div>
+                                  <div class="dtr-testimonial-user-info">
+                                    <h4 class="dtr-client-name">Sudheer Yadav</h4>
+                                    <span class="dtr-client-job">Professional Imaging</span> </div>
+                              </div>
+                              <!-- client info ends -->
+                          </div></div></div>
+                          <!--== slide 1 ends ==-->
+  
+                          <!--== slide 2 starts ==-->
+                          
+                          <!--== slide 2 ends ==-->
+  
+                          <!--== slide 3 starts ==-->
+                          
+                          <!--== slide 3 ends ==-->
+  
+                      <ul class="slick-dots" style="" role="tablist"><li class="slick-active" role="presentation"><button type="button" role="tab" id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 3" tabindex="0" aria-selected="true">1</button></li><li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 3" tabindex="-1">2</button></li><li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control02" aria-controls="slick-slide02" aria-label="3 of 3" tabindex="-1">3</button></li></ul></div>
+                      <!--===== testimonial slider ends =====-->
+  
+                  </div>
+                  <!-- column 1 ends -->
+  
+              </div>
+              <!--===== row 1 ends =====-->
+  
+          </section>
+          <!-- testimonial section ends
+  ================================================== -->
+  
+          <!-- features section starts
+  ================================================== -->
+          <section class="dtr-section dtr-py-80">
+              <div class="container">
+                  <h2 class="text-center">800+ Clients and Still Growing since 2015</h2>
+  
+                  <!--== row 1 starts ==-->
+                  <div class="row dtr-mt-40">
+  
+                      <!-- column 1 starts -->
+                      <div class="col-12 col-md-4 dtr-feature dtr-feature-top dtr-feature-circle-icon text-center">
+                          <div class="dtr-feature-img bg-dark"><i class="fa fa-cogs"></i></div>
+                          <h4 class="dtr-feature-heading">Complete Web Design Solutions</h4>
+                          <p>When you ask BootSpider team to design website, you get complete solution from buying domain, hosting, social media pages and more. You focus on business rest let our web design company take care of.</p>
+                      </div>
+                      <!-- column 1 ends -->
+  
+                      <!-- column 2 starts -->
+                      <div class="col-12 col-md-4 dtr-feature dtr-feature-top dtr-feature-circle-icon text-center">
+                          <div class="dtr-feature-img bg-dark"><i class="fa fa-files-o"></i></div>
+                          <h4 class="dtr-feature-heading">Easy Upgrade</h4>
+                          <p>There are high chances that you want to update your existing website design to next level; like upgrading from static to dynamic website; or adding more pages; we are available to help you. You will be charges very nominal. </p>
+                      </div>
+                      <!-- column 2 ends -->
+  
+                      <!-- column 3 starts -->
+                      <div class="col-12 col-md-4 dtr-feature dtr-feature-top dtr-feature-circle-icon text-center">
+                          <div class="dtr-feature-img bg-dark"><i class="fa fa-server"></i></div>
+                          <h4 class="dtr-feature-heading">Managed Service</h4>
+                          <p>You do not need to hire anyone to manage your website, our solution comes with complete maintenance, bug fixing, virus &amp; malware removal &amp; server scan to ensure no one have the access of your website and other files. </p>
+                      </div>
+                      <!-- column 3 ends -->
+  
+                  </div>
+                  <!--== row 1 ends ==-->
+  
+              </div>
+          </section>
+          <!-- features section ends
+  ================================================== -->
+  
+          <!-- faq section starts
+  ================================================== -->
+          <section class="dtr-section dtr-py-80 bg-light-blue">
+              <div class="container">
+  
+                  <!--===== row 1 starts =====-->
+                  <div class="row d-flex align-items-center">
+  
+                      <!-- column 1 starts -->
+                      <div class="col-12 col-md-6">
+                          <h2>A Highly Professional Website @ Cheaper Price</h2>
+                          <p class="text-size-md font-weight-medium">Sliding banners, workable contact form, whatsapp chat and many more. Make a website that  speak everything about your business </p>
+                          <a class="dtr-btn btn-green dtr-mt-20" href="#">Small website Rs. 3999/-, a small eCommerce portal @ 9,999/- including everything, and much more.</a> </div>
+                      <!-- column 1 ends -->
+  
+                      <!-- column 2 starts -->
+                      <div class="col-12 col-md-6 small-device-space">
+  
+                          <!--== accordion starts ==-->
+                          <div class="dtr-accordion accordion" id="home-accordion">
+                              
+                              <!-- accordion tab 1 starts -->
+                              <div class="card">
+                                  <div class="card-header" id="headingOne">
+                                      <button class="btn-accordion" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> <span class="color-blue">1.</span> Save on Domain &amp; Hosting</button>
+                                  </div>
+                                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#home-accordion">
+                                      <div class="card-body">Get professional .com or .in domain included with our package &amp; a high speed shared hosting.</div>
+                                  </div>
+                              </div>
+                              <!-- accordion tab 1 ends -->
+  
+                              <!-- accordion tab 2 starts -->
+                              <div class="card">
+                                  <div class="card-header" id="headingTwo">
+                                      <button class="btn-accordion collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> <span class="color-blue">2.</span> FREE 1 Year Maintenance</button>
+                                  </div>
+                                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#home-accordion">
+                                      <div class="card-body">Corrections anytime all year. You are covered with any plan. you may be charged additionally only when we see the work need more time to finish or its a new integration</div>
+                                  </div>
+                              </div>
+                              <!-- accordion tab 2 ends -->
+  
+                              <!-- accordion tab 3 starts -->
+                              <div class="card">
+                                  <div class="card-header" id="headingThree">
+                                      <button class="btn-accordion collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> <span class="color-blue">3.</span> Mobile Responsive</button>
+                                  </div>
+                                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#home-accordion">
+                                      <div class="card-body"> All our websites are designed for device compatible. When you open your website on laptop, desktop or on mobile it will give you better look and feel</div>
+                                  </div>
+                              </div>
+                              <!-- accordion tab 3 ends -->
+  
+                              <!-- accordion tab 4 starts -->
+                              <div class="card">
+                                  <div class="card-header" id="headingFour">
+                                      <button class="btn-accordion collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> <span class="color-blue">4.</span> Free Professional Email </button>
+                                  </div>
+                                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#home-accordion">
+                                      <div class="card-body"> Get professional email ID e.g. yourname@yourbusiness.com so that you can impress your client with your official email ID</div>
+                                  </div>
+                              </div>
+                              <!-- accordion tab 4 ends -->
+  
+                              <!-- accordion tab 5 starts -->
+                              <div class="card">
+                                  <div class="card-header" id="headingFive">
+                                      <button class="btn-accordion collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"> <span class="color-blue">5.</span> Future Bugs and Malware Fixes</button>
+                                  </div>
+                                  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#home-accordion">
+                                      <div class="card-body"> We ensure your website is bug and malware free. Let your clients find you anytime from anywhere in the world</div>
+                                  </div>
+                              </div>
+                              <!-- accordion tab 5 ends -->
+  
+                          </div>
+                          <!--== accordion ends ==-->
+  
+                      </div>
+                      <!-- column 2 ends -->
+  
+                  </div>
+                  <!--===== row 1 ends =====-->
+  
+              </div>
+          </section>
+          <!-- faq section ends
+  ================================================== -->
+  
+          <!-- about section starts
+  ================================================== -->
+          <section class="dtr-py-80">
+              <div class="container">
+                  <h2 class="text-center dtr-mb-20">Why BootSpider.com?</h2>
+  
+                  <!--== row 1 starts ==-->
+                  <div class="row">
+                      <div class="col-12 text-center"> <img src="assets/images/service.png" alt="image" width="80%">
+                          <h3 class="dtr-mb-5 color-blue">Ask us for website type that you need for your business. We have lots of sample available for you</h3>
+                          <p class="text-center"><span class="dtr-text-sep dtr-text-sep-center text-uppercase">Why BootSpider LLC?</span></p>
+                      </div>
+                  </div>
+                  <!--== row 1 ends ==-->
+  
+                  <!--== row 2 starts ==-->
+                  <div class="row dtr-mt-30">
+  
+                      <!-- column 1 starts -->
+                      <div class="col-12 col-md-6">
+                          <ul>
+                              <li>We are in web design and digital marketing since 2015 and handling clients from different business verticals.</li>
+                              <li>Hands of experience managing small website to large enterprise websites with experienced team</li>
+                              <li>Several success stories where they started with zero and now having better turnover than us :-)</li>
+                              <li>Complete maintenance and monitoring so that you do not need to worry about issues, bugs and malware issues.</li>
+                          </ul>
+                         </div>
+                      <!-- column 1 ends -->
+  
+                      <!-- column 2 starts -->
+                      <div class="col-12 col-md-6">
+                          <ul>
+                              <li>We love making static website as well as dynamic depends on requirement</li>
+                              <li>True advice that nurture your business when you plan moving to digital platform</li>
+                              <li>End to end support after development for digital promotion and running ads on social media as well as on Google</li>
+                              <li>Request for update and edit anytime at super cheap cost</li>
+                          </ul>
+                      </div>
+                      <!-- column 2 ends -->
+  
+                  </div>
+                  <!--== row 2 ends ==-->
+                  <div class="row dtr-mt-30">
+  
+                      <!-- column 1 starts -->
+                      <div class="col-12 col-md-6">
+                      <img src="assets/images/Untitled-2.jpg" alt="image" width="80%">
+                         </div>
+                      <!-- column 1 ends -->
+  
+                      <!-- column 2 starts -->
+                      <div class="col-12 col-md-6">
+                          <img src="assets/images/logos.jpg" alt="image" width="100%">
+                      </div>
+                      <!-- column 2 ends -->
+  
+                  </div>
+  
+              </div>
+          </section>
+          <!-- about section ends
+  ================================================== -->
+  
+          <!-- cta section starts
+  ================================================== -->
+          <section class="dtr-py-80 bg-dark-blue color-white">
+              <div class="container">
+  
+                  <!--== row 1 starts ==-->
+                  <div class="row">
+                      <div class="col-12">
+                          <h2 class="dtr-xl-heading text-lg-left text-center">Still thinking?, Call Us</h2>
+                          <div class="d-flex flex-column flex-lg-row align-content-between align-items-center">
+                              <p class="text-size-md">Get website design service for your business @ supper affordable price starting Rs. 3999/-</p>
+                              <blink><a href="tel:+918744087446" class="dtr-btn btn-green ml-lg-auto">Click Here to Talk With Developer</a></blink> </div>
+                      </div>
+                  </div>
+                  <!--== row 1 ends ==-->
+  
+              </div>
+          </section>
+          <!-- cta section ends
+  ================================================== -->
+  
+      </div>
+      <!-- == main content area ends == -->
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <a href="https://api.whatsapp.com/send?phone=918744087446&amp;text=" class="float" target="_blank">
+  <i class="fa fa-whatsapp my-float"></i>
+  </a>
+  
+      <!-- footer section starts
+  ================================================== -->
+      <footer id="dtr-footer">
+  
+          <!--== footer main starts ==-->
+          <div class="dtr-footer-main">
+              <div class="container">
+  
+                  <!--== row starts ==-->
+                  <div class="row">
+  
+                      <!-- column 1 starts -->
+                      <div class="col-12 col-md-6">
+                          <p>© 2021 BootSpider LLC | <b>Meet us at: Dwarka, Delhi &amp; Jagatpura, Jaipur</b></p>
+                      </div>
+                      <!-- column 1 ends -->
+  
+                      <!-- column 2 starts -->
+                      <div class="col-12 col-md-6">
+                          <ul class="dtr-copyright-list">
+                              <li><a href="#">Terms</a></li>
+                              <li><a href="#">Privacy</a></li>
+                              <li><a href="#">Disclaimer</a></li>
+                          </ul>
+                      </div>
+                      <!-- column 2 ends -->
+  
+                  </div>
+                  <!--== row ends ==-->
+  
+              </div>
+          </div>
+          <!--== footer main ends ==-->
+  
+      </footer>
+      <!-- footer section ends
+  ================================================== -->
+  
+  </div>
+  <!-- #dtr-wrapper ends -->
+  
+  <!-- JS FILES -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/plugins.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+  
+  
+  
+  </body></html>

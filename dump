@@ -1,0 +1,471 @@
+  <div class="carousel slide" data-ride="crousel">
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>    
+
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/slide1.jpg">
+        </div>
+        <div class="carousel-inner">
+          <div class="carausel-item">
+            <img src="img/slide2.jpg">
+          </div>
+        </div>
+        <div class="carousel-inner">
+          <div class="carausel-item">
+            <img src="img/slide3.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    
+   <div class=" our-services-container justify-content-center my-5">
+
+     <div class=" our-services justify-content-center p-5 m-5">
+       <div class="row rouded justify-content-center our-services-header ">
+         <h1 class="shadow  padding-vw1" >
+           Our Services
+         </h1>
+       </div> 
+       <div class="row justify-content-center">
+
+        
+         <div class="col-sm justify-content-center m-3">
+
+          <div class="border 6row m-0 p-3 justify-content-center bg-img-itServices img-height">
+
+            <!-- <img src="img/Itsolution.jpg" class="img-size img-fluid shadow  mb-5 bg-white rounded"> -->
+            <h2 class="row font-color-orange justify-content-center p-3 ">
+               IT  Services & Technology Solutions
+            </h2>
+
+          </div>
+        <div class="row">          
+          <div class="list-group ">
+            <li class="list-group-item  ">
+              <h5>  
+                <span class="font-color-orange font-size"> &#8594;</span>	Website Development
+              </h5>
+            </li>
+            <li class="list-group-item shadow ">
+              <h5>
+                <span class="font-color-orange"> &#8594;</span>  Application Development 
+              </h5>
+            </li>
+            <li class="list-group-item  ">
+              <h5 >
+                <span class="font-color-orange"> &#8594;</span>	  Website Maintenance 
+              </h5> 
+            </li>
+            <li class="list-group-item shadow ">
+              <h5>
+                <span class="font-color-orange"> &#8594;</span>  Domain Hosting
+              </h5>
+            </li>
+          </div> 
+        </div>
+        </div>
+
+        <div class="col-sm justify-content-center m-3">
+
+          <div class="row m-0 p-3 justify-content-center bg-img-digitalMarketing shadow img-height">
+            <!-- <img src="img/digitalmarketing.img" class="img-size img-fluid shadow  mb-5 bg-white rounded"> -->
+            <h2 class="font-color-orange row justify-content-center p-3 ">
+              DIGITAL MARKETING SERVICES 
+            </h2>
+          </div>
+
+          <div class="">
+          <div class="list-group ">
+            <li class="list-group-item  ">
+              <h5>  
+                <span class="font-color-orange font-size"> &#8594;</span>Search Engine Optimization
+
+              </h5>
+            </li>
+            <li class="list-group-item shadow ">
+              <h5>
+                <span class="font-color-orange"> &#8594;</span>   Social Media Optimization
+              </h5>
+            </li>
+            <li class="list-group-item  ">
+              <h5 >
+                <span class="font-color-orange"> &#8594;</span>	  Search Engine Marketing
+              </h5> 
+            </li>
+            <li class="list-group-item shadow ">
+              <h5>
+                <span class="font-color-orange"> &#8594;</span>  Content marketing
+              </h5>
+            </li>
+          </div> 
+          </div>
+        </div>
+        <!-- <div class="col-sm justify-content-center">
+          <div class="row m-0 justify-content-center">
+            <img src="img/Website-maintenance.jpg" class="img-size img-fluid shadow p-3 mb-5 bg-white rounded">
+          </div>
+          <div class="row justify-content-center p2">
+            <h1 class="font-color-orange">WEBSITE MAINTENANCE</h1>
+            <h6>Some of the most common website maintenance services include: 
+              Regularly updating the website. Running backups. Checking for 404 errors 
+              and server redirects. Removing spam comments. Updating the content. 
+              Testing page speeds. Checking any opt-in forms.
+            </h6>
+          </div>
+        </div> -->
+       </div>
+     </div>
+   </div>
+
+
+
+
+
+
+
+
+          <div class="card-group it-group shadow">
+            <div class="card">
+              <img src="/img/web-dev.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Website Development:  </h5>
+                <p class="card-text">:  Websites are either tailor-made or designed on specified layout considering the requisites, focusing on high responsiveness on all devices.</p>
+                <button class="align-self-end btn btn-success">Know More</button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/apk-dev.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Application Development</h5>
+                <p class="card-text">Application Development: We assist in innovative designing, fabricating & implementing software applications for desktops & mobiles. Massive business operations are eventually automated and governed. .</p>
+                <button class="btn btn-success">know More</button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/web-dev.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Website Maintenance</h5>
+                <p class="card-text">No major companies rules out this important function as their daily task. Undoubtedly, it requires a keen observation to continuously check and update website and stay healthy.</p>
+                <button class="btn btn-success">Know More</button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/web-mnt.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Domain Hosting</h5>
+                <p class="card-text">Whether you already have a domain or looking to secure website with DDoS Protection & Geo-Redundancy, acquire expert solutions to avail high optimization.</p>
+                <button class="btn btn-success">Know More</button>
+              </div>
+            </div>
+          </div>
+          Conceptualize: Our specialized team helps to consolidate the needs, suggest best practices and organize a responsive business structure. To create online presence & enhance user experience, latest technology & software are judiciously executed. 
+Strategize: Analyzing the business scenario, the cultivated ideas are evaluated & an action-plan is formulated. Our strategic approach enables high –quality customer engagement and an exceptional business development.
+Digitize: By leveraging our expertise, the outlined methodology is now set for its digital journey. Several A/B testing across platforms qualifies in achieving chalked-out goals.
+<li class="list-group-item row">
+              <div class="col-sm-6">
+                <h5 class="mt-2"> 
+                  <i class="bullet-image mr-2">
+                    <img class="bullet-image" src="img/bullet.png">
+                  </i> 
+                </h5>
+              </div>  
+              <div class="col-sm-6">
+                  <h5 class="mt-2">
+                    Website Development
+                  </h5>
+                 
+              </div>
+            
+              
+              code of website Development 
+
+              
+              <!-- <div class="row">
+            <div class="col-sm-12 pr-0 pl-0">
+                <h1 class="domain text-center  pb-0 mb-0" style="background-color:rgba(235, 237, 238, 0.836); width: 100.39999%;">Website Development</h1>
+            </div>
+        </div>
+            <div class="row" style="max-height: 550px;">
+                
+                <div class=" p col-sm-6 p-0"> 
+                <img src="./img/sdlc.png" alt="image" style="width:100%; height: 410px;">
+                </div>
+            
+        
+                <div class="col-sm-6">
+                    <p>Website Development:  Websites are either tailor-made or designed 
+                        on specified layout considering the requisites, focusing on high 
+                        responsiveness on all devices – mobile, laptop, tablet, etc. 
+                        Websites can be developed for internet or intranet comprising
+                        of static single page to complex web applications, E-commerce, etc.
+                    </p>
+                    <p>Syolo Outsourcing has a specialized team of certified developers 
+                    & programmers, extensively functional in web mark-up and coding.
+                    Every aspect of development task includes client and server side scripting,
+                        security configuration,<abbr title="Content Management System"> CMS</abbr> and E-commerce
+                        development. Basing the industry, our web developers are mastered to deliver
+                        distinctive multi-layer types of development.
+                    </p>
+                    <ul style="list-style-type:disclosure-closed;">
+                        <liBuilding Front –end of Website</li>
+                        <li>Wo>Drafting a Plan </li>
+                        <li>Creating a Wireframe/Blueprint</li>
+                        <li>Writing codes (big three language -<abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr> or Java)</li>
+                        <li>Building the Back-end of Website</li>
+                        <li>rking with<abbr title="Content Management System"> CMS</abbr> (optional)</li>
+                        <li>Acquiring Domain name & Hosting</li>
+                        <li>Launching the Website</li>
+                    </ul>
+                </div>
+            </div> -->
+
+                                  Model
+
+             <div id="demo" class="carousel slide " data-ride="carousel">
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+    
+
+        <!-- The slideshow -->
+          <div class="carousel-inner padding-vw 5">
+            <div class="carousel-item active">
+              <img src="img/carousel_1.png" alt="Syolo Technologies">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Carousel_2.png" alt="Syolo Outourcing">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Carousel_3.png" alt="syolo Consulting">
+            </div>
+           </div>
+    
+          <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon font-color-orange"></span>
+          </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"> </span>
+            </a>
+          </div>
+
+          Nav background
+
+          
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="shortcut icon" href="logo/favicon.png" type="image/x-icon">
+    
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYOLO</title>
+   <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+    <!-- Latest compiled JavaScript -->
+    <!--Get your code at fontawesome.com-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/navbar1.css">
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <a href="theme.html" class="navbar-brand"><img src="./logo/Syolo123.png" alt="syolo123" style="height: 80px;width: 250px;"></a>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-12">
+              <span>
+                <i class="fas fa-phone-volume  "></i>
+                  +910123456789
+                </span>
+            </div>
+
+            <div class="col-sm-12">
+              <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+             </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Explore</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Create</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Share</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        
+    </div>
+  </nav>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+</body>
+</html>
+
+<!-- <nav class="navbar navbar-expand-md bg-light navbar-light  shadow" > -->
+    <!-- Brand -->
+    <!-- <a class="navbar-brand  " href="# "> <img class="navbar-brand padding-no shadow-hover" src="./logo/Syolo123.png" alt="Syolo Group"></a>
+   -->
+    <!-- Toggler/collapsibe Button -->
+    <!-- <button class="navbar-toggler btn btn-outline shadow-hover" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+  
+    <!-- Navbar links -->
+    <!-- <div class="collapse navbar-collapse " id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto " >
+        <li class="nav-item btn shadow-hover py-0" >
+          <a class="nav-link  " href="index.html">
+              <b>Home</b>
+          </a>
+        </li>
+        <li class="nav-item shadow-hover btn py-0 ">
+          <a class="nav-link " href="aboutUs.html"> <b>About Us</b></a>
+        </li>
+        <li class="nav-item shadow-hover btn py-0">
+          <a class="nav-link " href="industry.html"><b>Industry</b></a>
+        </li>
+        <li class="nav-item btn shadow-hover py-0">
+          <a class="nav-link " href="services.html"><b> Services</b></a>
+        </li>
+        
+        <li class="nav-item btn shadow-hover py-0">
+          <a class="nav-link " href="#"><b>Technology</b></a>
+        </li> -->
+        
+        <!-- <li class="  nav-item shadow-hover btn py-0 ">
+          <a class=" nav-link" href="bookConsultation.html"><b>Book Free Consultation </b></a>
+       </li> -->
+    
+        <!-- <li class="nav-item shadow-hover btn py-0 ">
+            <a class="nav-link " href="Blog.html"> <b> Blogs</b></a>
+        </li>
+     
+        
+        <li class="nav-item shadow-hover btn py-0 ">
+            <a class="nav-link " href="contactus.html"><b>Contact Us</b></a>
+        </li> -->
+        <!-- <li class="nav-item shadow-hover btn ">
+          <a class=" nav-link" href="Demo.html">Demo</a>
+        </li> -->
+      <!-- </ul> -->
+      <!-- <ul class="nav navbar-nav navbar-right">
+          <li class="  ">
+              <a class=" " href="consultation">Book Free Consultation</a>
+           </li>
+      </ul> -->
+    <!-- </div>
+  </nav> -->
+
+                                                              code of 2nd kaking nevbar
+  
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="shortcut icon" href="logo/favicon.png" type="image/x-icon">
+    
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYOLO</title> -->
+   <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">   -->
+    <!-- Latest compiled JavaScript -->
+    <!--Get your code at fontawesome.com-->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/navbar1.css">
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+    <div class="container">
+       <div class="row">
+
+        <div class="col-sm-6 col-xs-3">
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="theme.html" class="navbar-brand"><img src="./logo/Syolo123.png" alt="syolo123" style="height: 60px;width: 180px; margin-right: 50px;">
+            
+          </a>
+        </div>
+        <div class="col-sm-6 col-xs-6">
+          <div class="row " style="margin-left: 300px;">
+            <div class="col-sm-12">
+            <span><i class="fas fa-phone-volume "></i>+910123456789</span>
+            </div>
+            <div class="col-sm-12">
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Explore</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Create</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Share</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+      
+      
+      
+     
+    </div>
+  </nav>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <!-- Popper JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+</body>
+</html> -->
